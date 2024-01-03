@@ -1,0 +1,485 @@
+1. Используя команду cat в терминале операционной системы Linux, создать два файла Домашние животные (заполнив файл собаками, кошками, хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и ослы), а затем объединить их. Просмотреть содержимое созданного файла. Переименовать файл, дав ему новое имя (Друзья человека).
+cat > "Домашние животные"
+Кошка
+Собака
+Хомяк
+
+cat > "Вьючные животные"
+Лошадь
+Верблюд
+Осел
+
+cat "Вьючные животные" >> "Домашние животные"
+
+cat "Домашние животные"
+Кошка
+Собака
+Хомяк
+Лошадь
+Верблюд
+Осел
+
+mv "Домашние животные" "Друзья человека"
+
+2. Создать директорию, переместить файл туда.
+mkdir Papka
+mv "Друзья человека" Papka
+
+3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
+из этого репозитория.
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb
+dpkg -i mysql-apt-config_0.8.29-1_all.deb
+sudo apt update
+apt install mysql-server -y
+
+4. Установить и удалить deb-пакет с помощью dpkg.
+wget https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb
+dpkg -i virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb
+apt -f install 
+dpkg -r virtualbox-7.0 
+apt autoremove
+
+5. Выложить историю команд в терминале ubuntu.
+
+bonyaslayer@bonyaslayer-virtual-machine:~$ cd Downloads/
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads$ mkdir Task_Linux
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads$ cd Task_Linux/
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ cat > "Домашние животные"
+Собака
+Кошка
+Хомяк
+^C
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ cat > "Вьючные животные"
+Лошадь
+Верблюд
+Осел  
+^C
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ cat "Домашние животные" >> "Вьючные животные" 
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ mv "Домашние животные" "Друзья человека"
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ mkdir Papka
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ mv "Друзья человека" Papka
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb
+--2024-01-03 11:54:15--  https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb
+Resolving dev.mysql.com (dev.mysql.com)... 184.85.112.229, 2a02:2d8:0:799e::2e31, 2a02:2d8:0:7987::2e31
+Connecting to dev.mysql.com (dev.mysql.com)|184.85.112.229|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://repo.mysql.com//mysql-apt-config_0.8.29-1_all.deb [following]
+--2024-01-03 11:54:16--  https://repo.mysql.com//mysql-apt-config_0.8.29-1_all.deb
+Resolving repo.mysql.com (repo.mysql.com)... 23.210.173.94, 2a02:26f0:9500:b83::1d68, 2a02:26f0:9500:b8a::1d68
+Connecting to repo.mysql.com (repo.mysql.com)|23.210.173.94|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18172 (18K) [application/x-debian-package]
+Saving to: ‘mysql-apt-config_0.8.29-1_all.deb’
+
+mysql-apt-config_0.8.29-1_all.deb             100%[==============================================================================================>]  17,75K  --.-KB/s    in 0,002s  
+
+2024-01-03 11:54:17 (8,85 MB/s) - ‘mysql-apt-config_0.8.29-1_all.deb’ saved [18172/18172]
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo  dpkg -i mysql-apt-config_0.8.29-1_all.deb
+[sudo] password for bonyaslayer: 
+Selecting previously unselected package mysql-apt-config.
+(Reading database ... 178962 files and directories currently installed.)
+Preparing to unpack mysql-apt-config_0.8.29-1_all.deb ...
+Unpacking mysql-apt-config (0.8.29-1) ...
+Setting up mysql-apt-config (0.8.29-1) ...
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo apt update
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease      
+Get:3 http://repo.mysql.com/apt/ubuntu jammy InRelease [20,2 kB]    
+Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease                  
+Hit:5 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 Sources [963 B]
+Get:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config amd64 Packages [566 B]
+Get:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config i386 Packages [566 B]
+Get:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 Packages [12,6 kB]
+Get:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools amd64 Packages [7 994 B]
+Get:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools i386 Packages [457 B]
+Fetched 43,4 kB in 3s (14,7 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+9 packages can be upgraded. Run 'apt list --upgradable' to see them.
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo apt install mysql-server -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core mysql-community-client-plugins
+  mysql-community-server mysql-community-server-core
+The following NEW packages will be installed:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core mysql-community-client-plugins
+  mysql-community-server mysql-community-server-core mysql-server
+0 upgraded, 13 newly installed, 0 to remove and 9 not upgraded.
+Need to get 37,8 MB of archives.
+After this operation, 273 MB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libaio1 amd64 0.3.112-13build1 [7 176 B]
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libmecab2 amd64 0.996-14build9 [199 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-utils amd64 0.996-14build9 [4 850 B]
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]
+Get:5 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-common amd64 8.0.35-1ubuntu22.04 [67,9 kB]
+Get:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-plugins amd64 8.0.35-1ubuntu22.04 [1 443 kB]
+Get:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-core amd64 8.0.35-1ubuntu22.04 [2 120 kB]
+Get:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client amd64 8.0.35-1ubuntu22.04 [2 195 kB]
+Get:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-client amd64 8.0.35-1ubuntu22.04 [66,6 kB]
+Get:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server-core amd64 8.0.35-1ubuntu22.04 [24,8 MB]
+Get:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server amd64 8.0.35-1ubuntu22.04 [78,3 kB]
+Get:12 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-server amd64 8.0.35-1ubuntu22.04 [66,6 kB]
+Get:13 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4 384 B]                                                                   
+Fetched 37,8 MB in 12s (3 038 kB/s)                                                                                                                                                 
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 178967 files and directories currently installed.)
+Preparing to unpack .../00-mysql-common_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-common (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-client-plugins.
+Preparing to unpack .../01-mysql-community-client-plugins_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-client-plugins (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-client-core.
+Preparing to unpack .../02-mysql-community-client-core_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-client-core (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-client.
+Preparing to unpack .../03-mysql-community-client_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-client (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../04-mysql-client_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-client (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../05-libaio1_0.3.112-13build1_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.112-13build1) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../06-libmecab2_0.996-14build9_amd64.deb ...
+Unpacking libmecab2:amd64 (0.996-14build9) ...
+Selecting previously unselected package mysql-community-server-core.
+Preparing to unpack .../07-mysql-community-server-core_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-server-core (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-server.
+Preparing to unpack .../08-mysql-community-server_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-server (8.0.35-1ubuntu22.04) ...
+Selecting previously unselected package mecab-utils.
+Preparing to unpack .../09-mecab-utils_0.996-14build9_amd64.deb ...
+Unpacking mecab-utils (0.996-14build9) ...
+Selecting previously unselected package mecab-ipadic.
+Preparing to unpack .../10-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mecab-ipadic-utf8.
+Preparing to unpack .../11-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../12-mysql-server_8.0.35-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-server (8.0.35-1ubuntu22.04) ...
+Setting up libmecab2:amd64 (0.996-14build9) ...
+Setting up mysql-common (8.0.35-1ubuntu22.04) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mecab-utils (0.996-14build9) ...
+Setting up mysql-community-client-plugins (8.0.35-1ubuntu22.04) ...
+Setting up libaio1:amd64 (0.3.112-13build1) ...
+Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-community-client-core (8.0.35-1ubuntu22.04) ...
+Setting up mysql-community-server-core (8.0.35-1ubuntu22.04) ...
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-community-client (8.0.35-1ubuntu22.04) ...
+Setting up mysql-client (8.0.35-1ubuntu22.04) ...
+Setting up mysql-community-server (8.0.35-1ubuntu22.04) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+Setting up mysql-server (8.0.35-1ubuntu22.04) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.5) ...
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ wget https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb
+--2024-01-03 12:02:23--  https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb
+Resolving download.virtualbox.org (download.virtualbox.org)... 23.210.40.79
+Connecting to download.virtualbox.org (download.virtualbox.org)|23.210.40.79|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 92713128 (88M) [text/plain]
+Saving to: ‘virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb’
+
+virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd 100%[==============================================================================================>]  88,42M  10,3MB/s    in 10s     
+
+2024-01-03 12:02:34 (8,45 MB/s) - ‘virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb’ saved [92713128/92713128]
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo dpkg -i virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb 
+Selecting previously unselected package virtualbox-7.0.
+(Reading database ... 179327 files and directories currently installed.)
+Preparing to unpack virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb ...
+Unpacking virtualbox-7.0 (7.0.12-159484~Ubuntu~jammy) ...
+dpkg: dependency problems prevent configuration of virtualbox-7.0:
+ virtualbox-7.0 depends on libqt5core5a (>= 5.15.1); however:
+  Package libqt5core5a is not installed.
+ virtualbox-7.0 depends on libqt5dbus5 (>= 5.14.1); however:
+  Package libqt5dbus5 is not installed.
+ virtualbox-7.0 depends on libqt5gui5 (>= 5.14.1) | libqt5gui5-gles (>= 5.14.1); however:
+  Package libqt5gui5 is not installed.
+  Package libqt5gui5-gles is not installed.
+ virtualbox-7.0 depends on libqt5help5 (>= 5.15.1); however:
+  Package libqt5help5 is not installed.
+ virtualbox-7.0 depends on libqt5opengl5 (>= 5.0.2); however:
+  Package libqt5opengl5 is not installed.
+ virtualbox-7.0 depends on libqt5printsupport5 (>= 5.0.2); however:
+  Package libqt5printsupport5 is not installed.
+ virtualbox-7.0 depends on libqt5widgets5 (>= 5.15.1); however:
+  Package libqt5widgets5 is not installed.
+ virtualbox-7.0 depends on libqt5x11extras5 (>= 5.6.0); however:
+  Package libqt5x11extras5 is not installed.
+ virtualbox-7.0 depends on libqt5xml5 (>= 5.0.2); however:
+  Package libqt5xml5 is not installed.
+
+dpkg: error processing package virtualbox-7.0 (--install):
+ dependency problems - leaving unconfigured
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for shared-mime-info (2.1-2) ...
+Errors were encountered while processing:
+ virtualbox-7.0
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo apt -f install
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Correcting dependencies... Done
+The following additional packages will be installed:
+  libdouble-conversion3 libmd4c0 libpcre2-16-0 libqt5core5a libqt5dbus5 libqt5gui5 libqt5help5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5sql5 libqt5sql5-sqlite
+  libqt5svg5 libqt5widgets5 libqt5x11extras5 libqt5xml5 libxcb-xinerama0 libxcb-xinput0 qt5-gtk-platformtheme qttranslations5-l10n
+Suggested packages:
+  qt5-image-formats-plugins qtwayland5
+The following NEW packages will be installed:
+  libdouble-conversion3 libmd4c0 libpcre2-16-0 libqt5core5a libqt5dbus5 libqt5gui5 libqt5help5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5sql5 libqt5sql5-sqlite
+  libqt5svg5 libqt5widgets5 libqt5x11extras5 libqt5xml5 libxcb-xinerama0 libxcb-xinput0 qt5-gtk-platformtheme qttranslations5-l10n
+0 upgraded, 20 newly installed, 0 to remove and 9 not upgraded.
+1 not fully installed or removed.
+Need to get 12,7 MB of archives.
+After this operation, 51,1 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libdouble-conversion3 amd64 3.1.7-4 [39,0 kB]
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpcre2-16-0 amd64 10.39-3ubuntu0.1 [203 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5core5a amd64 5.15.3+dfsg-2ubuntu0.2 [2 006 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5dbus5 amd64 5.15.3+dfsg-2ubuntu0.2 [222 kB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libmd4c0 amd64 0.4.8-1 [42,0 kB]
+Get:6 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5network5 amd64 5.15.3+dfsg-2ubuntu0.2 [731 kB]
+Get:7 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-xinerama0 amd64 1.14-3ubuntu3 [5 414 B]
+Get:8 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-xinput0 amd64 1.14-3ubuntu3 [34,3 kB]
+Get:9 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5gui5 amd64 5.15.3+dfsg-2ubuntu0.2 [3 722 kB]
+Get:10 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5sql5 amd64 5.15.3+dfsg-2ubuntu0.2 [123 kB]
+Get:11 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5widgets5 amd64 5.15.3+dfsg-2ubuntu0.2 [2 561 kB]
+Get:12 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libqt5help5 amd64 5.15.3-1 [162 kB]
+Get:13 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5opengl5 amd64 5.15.3+dfsg-2ubuntu0.2 [153 kB]
+Get:14 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5printsupport5 amd64 5.15.3+dfsg-2ubuntu0.2 [214 kB]
+Get:15 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libqt5x11extras5 amd64 5.15.3-1 [10,9 kB]
+Get:16 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5xml5 amd64 5.15.3+dfsg-2ubuntu0.2 [124 kB]
+Get:17 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libqt5svg5 amd64 5.15.3-1 [149 kB]
+Get:18 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libqt5sql5-sqlite amd64 5.15.3+dfsg-2ubuntu0.2 [53,0 kB]
+Get:19 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 qt5-gtk-platformtheme amd64 5.15.3+dfsg-2ubuntu0.2 [130 kB]
+Get:20 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 qttranslations5-l10n all 5.15.3-1 [1 983 kB]
+Fetched 12,7 MB in 2s (5 177 kB/s)             
+Selecting previously unselected package libdouble-conversion3:amd64.
+(Reading database ... 180064 files and directories currently installed.)
+Preparing to unpack .../00-libdouble-conversion3_3.1.7-4_amd64.deb ...
+Unpacking libdouble-conversion3:amd64 (3.1.7-4) ...
+Selecting previously unselected package libpcre2-16-0:amd64.
+Preparing to unpack .../01-libpcre2-16-0_10.39-3ubuntu0.1_amd64.deb ...
+Unpacking libpcre2-16-0:amd64 (10.39-3ubuntu0.1) ...
+Selecting previously unselected package libqt5core5a:amd64.
+Preparing to unpack .../02-libqt5core5a_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5core5a:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5dbus5:amd64.
+Preparing to unpack .../03-libqt5dbus5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5dbus5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libmd4c0:amd64.
+Preparing to unpack .../04-libmd4c0_0.4.8-1_amd64.deb ...
+Unpacking libmd4c0:amd64 (0.4.8-1) ...
+Selecting previously unselected package libqt5network5:amd64.
+Preparing to unpack .../05-libqt5network5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5network5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libxcb-xinerama0:amd64.
+Preparing to unpack .../06-libxcb-xinerama0_1.14-3ubuntu3_amd64.deb ...
+Unpacking libxcb-xinerama0:amd64 (1.14-3ubuntu3) ...
+Selecting previously unselected package libxcb-xinput0:amd64.
+Preparing to unpack .../07-libxcb-xinput0_1.14-3ubuntu3_amd64.deb ...
+Unpacking libxcb-xinput0:amd64 (1.14-3ubuntu3) ...
+Selecting previously unselected package libqt5gui5:amd64.
+Preparing to unpack .../08-libqt5gui5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5gui5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5sql5:amd64.
+Preparing to unpack .../09-libqt5sql5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5sql5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5widgets5:amd64.
+Preparing to unpack .../10-libqt5widgets5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5widgets5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5help5:amd64.
+Preparing to unpack .../11-libqt5help5_5.15.3-1_amd64.deb ...
+Unpacking libqt5help5:amd64 (5.15.3-1) ...
+Selecting previously unselected package libqt5opengl5:amd64.
+Preparing to unpack .../12-libqt5opengl5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5opengl5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5printsupport5:amd64.
+Preparing to unpack .../13-libqt5printsupport5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5printsupport5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5x11extras5:amd64.
+Preparing to unpack .../14-libqt5x11extras5_5.15.3-1_amd64.deb ...
+Unpacking libqt5x11extras5:amd64 (5.15.3-1) ...
+Selecting previously unselected package libqt5xml5:amd64.
+Preparing to unpack .../15-libqt5xml5_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5xml5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package libqt5svg5:amd64.
+Preparing to unpack .../16-libqt5svg5_5.15.3-1_amd64.deb ...
+Unpacking libqt5svg5:amd64 (5.15.3-1) ...
+Selecting previously unselected package libqt5sql5-sqlite:amd64.
+Preparing to unpack .../17-libqt5sql5-sqlite_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking libqt5sql5-sqlite:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package qt5-gtk-platformtheme:amd64.
+Preparing to unpack .../18-qt5-gtk-platformtheme_5.15.3+dfsg-2ubuntu0.2_amd64.deb ...
+Unpacking qt5-gtk-platformtheme:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Selecting previously unselected package qttranslations5-l10n.
+Preparing to unpack .../19-qttranslations5-l10n_5.15.3-1_all.deb ...
+Unpacking qttranslations5-l10n (5.15.3-1) ...
+Setting up libdouble-conversion3:amd64 (3.1.7-4) ...
+Setting up libxcb-xinput0:amd64 (1.14-3ubuntu3) ...
+Setting up libpcre2-16-0:amd64 (10.39-3ubuntu0.1) ...
+Setting up libxcb-xinerama0:amd64 (1.14-3ubuntu3) ...
+Setting up qttranslations5-l10n (5.15.3-1) ...
+Setting up libqt5core5a:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5dbus5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libmd4c0:amd64 (0.4.8-1) ...
+Setting up libqt5network5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5sql5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5xml5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5sql5-sqlite:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5gui5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5widgets5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5help5:amd64 (5.15.3-1) ...
+Setting up qt5-gtk-platformtheme:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5printsupport5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5opengl5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Setting up libqt5x11extras5:amd64 (5.15.3-1) ...
+Setting up libqt5svg5:amd64 (5.15.3-1) ...
+Setting up virtualbox-7.0 (7.0.12-159484~Ubuntu~jammy) ...
+Adding group `vboxusers' (GID 138) ...
+Done.
+This system is currently not set up to build kernel modules.
+Please install the gcc make perl packages from your distribution.
+This system is currently not set up to build kernel modules.
+Please install the gcc make perl packages from your distribution.
+
+There were problems setting up VirtualBox.  To re-start the set-up process, run
+  /sbin/vboxconfig
+as root.  If your system is using EFI Secure Boot you may need to sign the
+kernel modules (vboxdrv, vboxnetflt, vboxnetadp, vboxpci) before you can load
+them. Please see your Linux system's documentation for more information.
+Processing triggers for libc-bin (2.35-0ubuntu3.5) ...
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo dpkg -r virtualbox-7.0 
+(Reading database ... 180584 files and directories currently installed.)
+Removing virtualbox-7.0 (7.0.12-159484~Ubuntu~jammy) ...
+Processing triggers for shared-mime-info (2.1-2) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ sudo apt autoremove 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages will be REMOVED:
+  libdouble-conversion3 libmd4c0 libpcre2-16-0 libqt5core5a libqt5dbus5 libqt5gui5 libqt5help5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5sql5 libqt5sql5-sqlite
+  libqt5svg5 libqt5widgets5 libqt5x11extras5 libqt5xml5 libxcb-xinerama0 libxcb-xinput0 qt5-gtk-platformtheme qttranslations5-l10n
+0 upgraded, 0 newly installed, 20 to remove and 9 not upgraded.
+After this operation, 51,1 MB disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 179848 files and directories currently installed.)
+Removing qt5-gtk-platformtheme:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5xml5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5printsupport5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5sql5-sqlite:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5opengl5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5help5:amd64 (5.15.3-1) ...
+Removing libqt5sql5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5svg5:amd64 (5.15.3-1) ...
+Removing libqt5x11extras5:amd64 (5.15.3-1) ...
+Removing qttranslations5-l10n (5.15.3-1) ...
+Removing libqt5widgets5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5gui5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libmd4c0:amd64 (0.4.8-1) ...
+Removing libqt5network5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libqt5dbus5:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libxcb-xinerama0:amd64 (1.14-3ubuntu3) ...
+Removing libxcb-xinput0:amd64 (1.14-3ubuntu3) ...
+Removing libqt5core5a:amd64 (5.15.3+dfsg-2ubuntu0.2) ...
+Removing libdouble-conversion3:amd64 (3.1.7-4) ...
+Removing libpcre2-16-0:amd64 (10.39-3ubuntu0.1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.5) ...
+bonyaslayer@bonyaslayer-virtual-machine:~/Downloads/Task_Linux$ 
+
+
+
+
+
+
